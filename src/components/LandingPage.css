@@ -1,0 +1,152 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Meie+Script&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.landingpage{
+    font-family: "Pacifico", sans-serif;
+}
+body {
+  background-color: rgba(145, 66, 29, 0.863);
+  overflow-x: hidden;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  transition: background-color 0.4s ease;
+  z-index: 10;
+  background-color: transparent;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.6); /* Chocolate-like dark tone */
+  border-radius: 50px;
+}
+
+
+.navbar .logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ffcc99;
+}
+
+/* ===== Background Video Section ===== */
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+}
+
+.video-background .content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 20%;
+  opacity: 0;
+  animation: slideUpFadeIn 1s ease-out 0.7s forwards;
+}
+
+/* ===== Chocolate Word Styling ===== */
+.chocolate {
+  font-size: 60px;
+  text-align: center;
+  display: inline-block;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: 5px;
+}
+
+.chocolate span {
+  display: inline-block;
+  color: white;
+  text-shadow: 0 0 10px #000;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Letter Glow Animation (No transform conflict) */
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 5px #000, 0 0 10px #5c2e00, 0 0 20px #ff9900;
+  }
+  50% {
+    text-shadow: 0 0 20px #fff8dc, 0 0 40px #d2691e;
+  }
+}
+
+/* Staggered animation delay */
+.chocolate span:nth-child(1) { animation-delay: 0s; }
+.chocolate span:nth-child(2) { animation-delay: 0.1s; }
+.chocolate span:nth-child(3) { animation-delay: 0.2s; }
+.chocolate span:nth-child(4) { animation-delay: 0.3s; }
+.chocolate span:nth-child(5) { animation-delay: 0.4s; }
+.chocolate span:nth-child(6) { animation-delay: 0.5s; }
+.chocolate span:nth-child(7) { animation-delay: 0.6s; }
+.chocolate span:nth-child(8) { animation-delay: 0.7s; }
+.chocolate span:nth-child(9) { animation-delay: 0.8s; }
+
+/* Slide-up intro animation for content */
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: paragraph below the word */
+.video-background .content p {
+  font-size: 20px;
+  margin-top: 20px;
+  opacity: 0.85;
+}

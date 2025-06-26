@@ -238,7 +238,7 @@
   letter-spacing: 1px;
   position: relative;
   overflow: hidden;
-  z-index: 1;
+  z-index: 10;
   transition: all 0.3s ease;
 
   /* 🔥 Real 3D Elevation with multiple shadows */
@@ -265,7 +265,7 @@
   );
   transform: skewX(-20deg);
   animation: sunlight-glow 2s ease-in-out infinite;
-  z-index: 2;
+  z-index: 20;
 }
 
 @keyframes sunlight-glow {

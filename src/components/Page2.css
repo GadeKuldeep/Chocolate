@@ -300,3 +300,60 @@
     inset 0 1px 1px rgba(255,255,255,0.4),
     inset 0 -2px 3px rgba(0,0,0,0.3);
 }
+/* 🍔 Hamburger Button */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  z-index: 11;
+}
+
+/* 📱 Mobile Menu Behavior */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    display: none;
+    gap: 20px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+  }
+}
+/* 🟨 Center content vertically and horizontally */
+.video-background .content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* ✅ Y-axis center */
+  align-items: center;       /* ✅ X-axis center */
+  text-align: center;
+  padding: 0;
+  opacity: 0;
+  animation: slideUpFadeIn 1s ease-out 0.7s forwards;
+}
+@media (max-width: 480px) {
+  .chocolate {
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0 auto;
+  }
+}

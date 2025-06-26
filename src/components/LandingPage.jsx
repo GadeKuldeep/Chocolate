@@ -3,16 +3,15 @@ import './LandingPage.css';
 
 const LandingPage = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Scroll background effect for navbar
     const handleScroll = () => {
       setScrolled(window.scrollY > 100);
     };
 
     window.addEventListener('scroll', handleScroll);
 
-    // Magnetic effect on chocolate letters
     const letters = document.querySelectorAll('.magnet-letter');
     const handleMouseMove = (e) => {
       letters.forEach(letter => {
@@ -21,7 +20,6 @@ const LandingPage = () => {
         const y = e.clientY - (rect.top + rect.height / 2);
         const distance = Math.sqrt(x * x + y * y);
         const maxDist = 100;
-
         if (distance < maxDist) {
           const strength = (maxDist - distance) / maxDist;
           letter.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
@@ -51,7 +49,16 @@ const LandingPage = () => {
     <div className='landingpage'>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="logo">ChocoBrand</div>
-        <ul className="nav-links">
+
+        {/* Hamburger Button */}
+        <div
+          className="hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
+        </div>
+
+        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li><a href="#">Home</a></li>
           <li><a href="#">Products</a></li>
           <li><a href="#">About</a></li>

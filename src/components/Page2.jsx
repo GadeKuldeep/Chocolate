@@ -20,7 +20,7 @@ const Page2 = () => {
                 </div>
 
                 <div className="second-page-content">
-                    <h2 class="welcome">Welcome to the Chocolate World</h2>
+                    <h2 className="welcome">Welcome to the Chocolate World</h2>
                     <p>
                         We craft the finest chocolates with love and passion. Explore our product range,
                         learn about our story, and find your next favorite flavor.
